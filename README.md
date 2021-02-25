@@ -39,3 +39,38 @@ There are a few however, which aren't as intuitive but their correlations may ac
 Below are four plots of some of these pairings, from these we can see that the top two plots have a much clearer correlation than the bottom two.
 
 ![scattersubplots](https://user-images.githubusercontent.com/62131073/109148619-9ad1df80-77ba-11eb-9810-933a9e48a513.png)
+
+## Results
+Here is a list of the regression models used:
+* Linear Regression
+* Ridge Regression
+* Lasso Regression
+
+We can compare how these models performed against each other by comparing their mean squared error and R2 scores.
+
+|    | Model   |   Mean squared error |   R2 score |
+|---:|:--------|---------------------:|-----------:|
+|  0 | Linear  |              3.70192 |   0.95864  |
+|  1 | Ridge   |              3.78034 |   0.957735 |
+|  2 | Lasso   |              3.86608 |   0.956459 |
+
+They all performed pretty well! Having an R2 score of ~0.95 gives our regression models a lot of validity.
+
+## Improvements
+If there is one thing to change, it would likely be the inclusion of the 'Country' variable. The name of countries alone have a large impact on the predicted life expectancy, possibly too much. There is likely not much practical use of a model that is mostly based off this. Below are some of the larger coefficients included in the model.
+
+
+|     | Variable                         |   Coefficient |
+|----:|:---------------------------------|--------------:|
+|  22 | Country_Angola                   |      -16.45   |
+|  49 | Country_Canada                   |       13.0033 |
+|  50 | Country_Central African Republic |      -15.4159 |
+|  51 | Country_Chad                     |      -14.2207 |
+|  63 | Country_Côte d'Ivoire            |      -15.1723 |
+|  78 | Country_Finland                  |       12.5063 |
+|  79 | Country_France                   |       14.1176 |
+|  85 | Country_Greece                   |       13.1851 |
+| 100 | Country_Israel                   |       12.9033 |
+| 156 | Country_Republic of Korea        |       12.2766 |
+| 171 | Country_Sierra Leone             |      -20.4855 |
+| 176 | Country_Somalia                  |      -12.9676 |

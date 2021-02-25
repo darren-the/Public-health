@@ -5,7 +5,7 @@ Having recently completed a machine learning course at school, I wanted to apply
 * Predict life expectancy of countries based off various factors such as GDP, schooling, infection rates etc
 * Compare the accuracy of different models using metrics like R2 scores
 
-# Summary Statistics
+##  Summary Statistics
 
 |    | Country     |   Year | Status     |   Life expectancy |   Adult Mortality |   infant deaths |   Alcohol |   percentage expenditure |   Hepatitis B |   Measles |   BMI |   under-five deaths |   Polio |   Total expenditure |   Diphtheria |   HIV/AIDS |      GDP |       Population |   thinness 1-19 years |   thinness 5-9 years |   Income composition of resources |   Schooling |
 |---:|:------------|-------:|:-----------|------------------:|------------------:|----------------:|----------:|-------------------------:|--------------:|----------:|------:|--------------------:|--------:|--------------------:|-------------:|-----------:|---------:|-----------------:|----------------------:|---------------------:|----------------------------------:|------------:|
@@ -36,6 +36,6 @@ There are a few however, which aren't as intuitive but their correlations may ac
 * Schooling vs life expectancy
 * HIV/AIDS vs life expectancy
 
-Lets visualise some of pairings. Below are four plots, from these we can see that the top two plots have a much clearer correlation than the bottom two.
+Below are four plots of some of these pairings, from these we can see that the top two plots have a much clearer correlation than the bottom two.
 
 ![scattersubplots](https://user-images.githubusercontent.com/62131073/109148619-9ad1df80-77ba-11eb-9810-933a9e48a513.png)

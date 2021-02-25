@@ -5,9 +5,7 @@ Having recently completed a machine learning course at school, I wanted to apply
 * Predict life expectancy of countries based off various factors such as GDP, schooling, infection rates etc
 * Compare the accuracy of different models using metrics like R2 scores
 
-# Understanding the data
-Before attempting to build any models, lets first explore some of the data to get a grasp of the variables we are dealing with. Looking through the table below, we can get a good idea of how the data is structured.
-<br>
+# Summary Statistics
 
 |    | Country     |   Year | Status     |   Life expectancy |   Adult Mortality |   infant deaths |   Alcohol |   percentage expenditure |   Hepatitis B |   Measles |   BMI |   under-five deaths |   Polio |   Total expenditure |   Diphtheria |   HIV/AIDS |      GDP |       Population |   thinness 1-19 years |   thinness 5-9 years |   Income composition of resources |   Schooling |
 |---:|:------------|-------:|:-----------|------------------:|------------------:|----------------:|----------:|-------------------------:|--------------:|----------:|------:|--------------------:|--------:|--------------------:|-------------:|-----------:|---------:|-----------------:|----------------------:|---------------------:|----------------------------------:|------------:|
@@ -16,3 +14,28 @@ Before attempting to build any models, lets first explore some of the data to ge
 |  2 | Afghanistan |   2013 | Developing |              59.9 |               268 |              66 |      0.01 |                 73.2192  |            64 |       430 |  18.1 |                  89 |      62 |                8.13 |           64 |        0.1 | 631.745  |      3.17317e+07 |                  17.7 |                 17.7 |                             0.47  |         9.9 |
 |  3 | Afghanistan |   2012 | Developing |              59.5 |               272 |              69 |      0.01 |                 78.1842  |            67 |      2787 |  17.6 |                  93 |      67 |                8.52 |           67 |        0.1 | 669.959  |      3.69696e+06 |                  17.9 |                 18   |                             0.463 |         9.8 |
 |  4 | Afghanistan |   2011 | Developing |              59.2 |               275 |              71 |      0.01 |                  7.09711 |            68 |      3013 |  17.2 |                  97 |      68 |                7.87 |           68 |        0.1 |  63.5372 |      2.9786e+06  |                  18.2 |                 18.2 |                             0.454 |         9.5 |
+
+Our main variable of interest is 'Life expectancy', so here is an idea of how these values are distributed.
+
+![histplot](https://user-images.githubusercontent.com/62131073/109147938-b7b9e300-77b9-11eb-8d70-4250fdb205e9.png)
+
+Correlation heatmaps are also useful to see if there are any particularly strong correlations between pairs of variables.
+
+![heatmap](https://user-images.githubusercontent.com/62131073/109148301-344cc180-77ba-11eb-85ab-31ac9f902d18.png)
+
+Using the map, we can gauge the strength of certain correlations much more easily. It appears that some pairings have quite strong correlations, but thats definitely a result of having very similar definitions:
+* Under five deaths vs infant deaths
+* Adult mortality vs life expectancy
+* Thinness vs BMI
+
+On the other hand, it seems some of these have almost no correlation:
+* BMI vs Hepatitis B
+* Diphtheria vs Total expenditure
+
+There are a few however, which aren't as intuitive but their correlations may actually be useful:
+* Schooling vs life expectancy
+* HIV/AIDS vs life expectancy
+
+Lets visualise some of pairings. Below are four plots, from these we can see that the top two plots have a much clearer correlation than the bottom two.
+
+![scattersubplots](https://user-images.githubusercontent.com/62131073/109148619-9ad1df80-77ba-11eb-9810-933a9e48a513.png)
